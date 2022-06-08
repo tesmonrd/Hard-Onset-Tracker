@@ -29,7 +29,7 @@ Hard onsets are calculated by observing the current Fast Fourier Transformation 
 ## How to run it
 ** Ensure you have a Python 3 version installed **
 * Navigate to a new project directory
-* `git clone` from repo: https://github.com/vu-5278-s21/final-project-tesmonrd.git
+* `git clone` from repo: https://github.com/tesmonrd/Hard-Onset-Tracker.git
 * initialize you virtual environment of choice and activate it... i use `python -m venv yourenvname`. 
 * load the requirements from requirements.txt using `pip install -r requirements.txt`. 
 * load the environment variables from envs/local.env using `source envs/local.env`.
