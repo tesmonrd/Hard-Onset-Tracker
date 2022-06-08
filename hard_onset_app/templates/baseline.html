@@ -1,0 +1,9 @@
+{# hard_onset_app/templates/baseline.html #}
+
+{% extends "index.html" %}
+{% block body %}
+    <h3>Press button and make "ah" sound at comfortable level for 2sec</h3>
+    <form action="/run_base" method="post">
+        <button type="submit">Collect Base</button>
+    </form>
+{% endblock %}

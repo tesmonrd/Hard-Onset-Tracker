@@ -1,0 +1,26 @@
+{# hard_onset_app/templates/analyzer.html #}
+
+{% extends "index.html" %}
+{% block body %}
+{% if not baseline %}
+    <h4>Looks like you haven't collected your baseline effort yet, please go to <a href="http://localhost:5000/baseline">collect baseline</a></h4>
+{% endif %}
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type=text/javascript>
+            $(function() {
+              $('a#runanalysis').on('click', function(e) {
+                e.preventDefault()
+                var ttl = $('#listen_time').val();
+                console.log(ttl);
+                window.location.href = '/execute_analysis?baseline={{ baseline }}&listen_time=' + ttl;
+              });
+            });
+    </script>
+    <form>
+        <label for="listen_time">Duration (seconds)</label>-->
+        <input type="number" id="listen_time">
+        <a href=# id=runanalysis><button class='btn btn-default'>Start</button></a>
+    </form>
+    {% block output %}
+    {% endblock %}
+{% endblock %}

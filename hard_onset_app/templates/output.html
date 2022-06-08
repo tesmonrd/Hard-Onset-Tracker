@@ -1,0 +1,13 @@
+{# hard_onset_app/templates/output.html #}
+
+{% extends "analyzer.html" %}
+{% block output %}
+<h2>Collected Data</h2>
+{% if onset_count %}
+    <h3>Instances of "hard-onset": {{ onset_count }}</h3>
+{% endif %}
+    <h3> Graphical Analysis (Speech Effort - Oscillo.)</h3>
+    {% if graph %}
+    <div id="output">{{ graph | safe}}</div>
+    {% endif %}
+{% endblock %}

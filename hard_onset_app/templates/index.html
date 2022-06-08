@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hard-Onset Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body style="margin: 2%;">
+<h1>RT's Hard-Onset Speech Tracker</h1>
+<h2>Follow these steps to start analyzing your speech:</h2>
+<ul>
+    <li>Collect a baseline for your speech: <a href="http://localhost:5000/baseline">collect baseline</a></li>
+    {% if baseline %}
+        <li>Analyze your live audio: <a href="{{ url_for('run_analysis', baseline=baseline) }}">analyze speech</a></li>
+    {% else %}
+        <li>Analyze your live audio: <a href="http://localhost:5000/analyze">analyze speech</a></li>
+    {% endif %}
+</ul>
+{% if message %}
+<div id="status"><br/>
+	<h4>{{ message }}</h4>
+</div>
+{% endif %}
+{% if baseline %}
+<h3>"Speech effort" baseline: {{ baseline }}</h3>
+{% endif %}
+{% block body %}
+{% endblock %}
+</body>
+</html>
